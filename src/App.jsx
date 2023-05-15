@@ -1,11 +1,13 @@
-import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
-  const [subtractCount, setSubtractCount] = useState(0)
+  const handleNameChange = () => {
+    const name = ["Hung", "Long", "Minh"];
+    const int = Math.floor(Math.random() * 3);
+    return name[int];
+  }
 
   return (
     <>
@@ -19,21 +21,13 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          + {count}
-        </button>
-        <button onClick={() => setSubtractCount((subtractCount) => subtractCount - 1)}>
-          - {subtractCount}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+        <h4>
+          {handleNameChange()}
+        </h4>
+     
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
 
-export default App
+export default App;
