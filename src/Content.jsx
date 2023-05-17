@@ -7,11 +7,26 @@ const Content = () => {
         return names[int];
     }
 
+    const handleClick = () => {
+        console.log("you clicked it");
+    }
+
+    const justClick = (names) => {
+        console.log(`${names} was clicked`)
+    }
+
+    const clickHandler = (e) => {
+        console.log(e.target.innerText);
+    }
+
     return (
         <main>
-            <p>
+            <p onDoubleClick={handleClick}>
                 Hello {handleNameChange()}
             </p>
+            <button onClick={handleClick()}>Just click on it</button>
+            <button onClick={() => justClick('Hung')}>Show the name</button>
+            <button onClick={(e) => clickHandler(e)}>Third button</button>
         </main>
     )
 }
