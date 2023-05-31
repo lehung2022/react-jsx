@@ -1,15 +1,16 @@
-import React from 'react'
 import './index.css';
 
-const Header = ({title}) => {
+const Header = ({ title }) => {
+
   return (
-    <header>
-        <h1>{title}</h1>
-    </header>
+      <header>
+          <h4>{title}</h4>
+      </header>
   )
 }
+
 Header.defaultProps = {
-  title: "Fire God Kang Liu"
+  title: "Default Title"
 }
 
 export default Header;

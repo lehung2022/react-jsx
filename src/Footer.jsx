@@ -1,14 +1,9 @@
-import React from 'react'
 import './index.css';
 
-const Footer = ({length}) => {
-   
-
+const Footer = ({ length }) => {
     return (
         <footer>
-            <h4>
-                {length} List {length === 1 ? "item" : "items"} 
-            </h4>
+            <p>{length} List {length === 1 ? "item" : "items"}</p>
         </footer>
     )
 }
