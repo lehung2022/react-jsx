@@ -26,12 +26,12 @@ function App() {
   }
 
   const handleCheck = (id) => {
-    const listItems = items.map((item) => item.id === id ? { ...item, checked: !item.checked } : item);
+    const listItems = items?.map((item) => item.id === id ? { ...item, checked: !item.checked } : item);
     setAndSaveItems(listItems);
   }
 
   const handleDelete = (id) => {
-    const listItems = items.filter((item) => item.id !== id);
+    const listItems = items?.filter((item) => item.id !== id);
     setAndSaveItems(listItems);
   }
 
@@ -55,11 +55,11 @@ function App() {
         setSearch={setSearch}
       />
       <Content
-        items={items.filter(item => ((item.item).toLowerCase()).includes(search.toLowerCase()))}
+        items={items?.filter(item => ((item.item).toLowerCase()).includes(search.toLowerCase()))}
         handleCheck={handleCheck}
         handleDelete={handleDelete}
       />
-      <Footer length={items.length} />
+      <Footer length={items?.length} />
     </div>
   );
 }
