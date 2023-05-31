@@ -44,7 +44,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header title="Mortal Kombat Characters Lists" />
+      <Header title="MK Characters Lists" />
       <AddItem
         newItem={newItem}
         setNewItem={setNewItem}
