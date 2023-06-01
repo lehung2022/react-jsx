@@ -18,20 +18,24 @@ function App() {
     localStorage.setItem('shoppinglist', JSON.stringify(newItems));
   }
 
+  // The fault lies here, within this function addItem
   const addItem = (item) => {
-    const id = items.length ? items[items.length - 1].id + 1 : 1;
+    const id = items?.length ? items[items?.length - 1]?.id + 1 : 1;
     const myNewItem = { id, checked: false, item };
     const listItems = [...items, myNewItem];
     setAndSaveItems(listItems);
   }
-
+  // The fault lies here, within this function addItem
+  // The fault is Uncaught TypeError: items is not iterable
+ 
+ 
   const handleCheck = (id) => {
-    const listItems = items?.map((item) => item.id === id ? { ...item, checked: !item.checked } : item);
+    const listItems = items?.map((item) => item?.id === id ? { ...item, checked: !item.checked } : item);
     setAndSaveItems(listItems);
   }
 
   const handleDelete = (id) => {
-    const listItems = items?.filter((item) => item.id !== id);
+    const listItems = items?.filter((item) => item?.id !== id);
     setAndSaveItems(listItems);
   }
 
@@ -55,7 +59,7 @@ function App() {
         setSearch={setSearch}
       />
       <Content
-        items={items?.filter(item => ((item.item).toLowerCase()).includes(search.toLowerCase()))}
+        items={items?.filter(item => ((item.item)?.toLowerCase())?.includes(search?.toLowerCase()))}
         handleCheck={handleCheck}
         handleDelete={handleDelete}
       />
